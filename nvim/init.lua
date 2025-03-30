@@ -1,10 +1,20 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
-vim.diagnostic.config({
-  virtual_text = false, -- Disable virtual text (inline text in the code)
-  signs = false, -- Disable signs (gutter signs)
-  underline = false, -- Disable underline
-  update_in_insert = false, -- Don't show diagnostics in insert mode
-  severity_sort = false, -- Disable sorting by severity
-})
-require("config.lazy")
--- Configure diagnostics to be disabled
+-- ~/.config/nvim/init.lua
+
+-- Set leader keys
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+-- Disable netrw (used by nvim-tree)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Set Nerd Font flag
+vim.g.have_nerd_font = false
+
+-- Load core configurations
+require('core.options')
+require('core.keymaps')
+require('core.autocmds')
+
+-- Load plugin manager and plugins
+require('plugins.lazy')

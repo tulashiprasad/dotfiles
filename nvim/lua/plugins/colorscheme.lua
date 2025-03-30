@@ -1,12 +1,10 @@
+-- ~/.config/nvim/lua/plugins/colorscheme.lua
+
 return {
-{
-  "folke/tokyonight.nvim",
-  opts = {
-    transparent = true,
-    styles = {
-      sidebars = "transparent",
-      floats = "transparent",
-    },
-  },
-},
+  'olimorris/onedarkpro.nvim',
+  name = 'onedarkpro',
+  priority = 1000,
+  config = function()
+    vim.cmd.colorscheme 'onedark'
+  end,
 }
